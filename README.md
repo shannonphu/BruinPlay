@@ -3,4 +3,4 @@ Resources: [resource repo with album cover and mp3 link](https://github.com/acm-
 
 ### Running dev environment
 1. `npm install`
-2. `node server.js`
+2. `node server.js` or `nodemon`

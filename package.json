@@ -1,0 +1,25 @@
+{
+  "name": "bruinplay",
+  "version": "1.0.0",
+  "description": "SoundCloud clone to play and view music",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/acm-hackschool-f17/BruinPlay.git"
+  },
+  "author": "ACM Hack",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/acm-hackschool-f17/BruinPlay/issues"
+  },
+  "homepage": "https://github.com/acm-hackschool-f17/BruinPlay#readme",
+  "devDependencies": {
+    "nodemon": "^1.12.1"
+  },
+  "dependencies": {
+    "express": "^4.15.4"
+  }
+}
