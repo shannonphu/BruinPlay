@@ -1,0 +1,64 @@
+[{
+	"audioSrc" : "https://raw.githubusercontent.com/acm-hackschool-f17/BruinPlayResources/master/audio/nkansal-mix/alien.mp3",
+	"audioImageSrc" : "https://raw.githubusercontent.com/acm-hackschool-f17/BruinPlayResources/master/cover_art/nkansal-mix/alien.jpg",
+	"title" : "Alien",
+	"artistName" : "Nikhil Kansal",
+	"albumName" : null,
+	"albumCoverSrc" : null
+},
+{
+	"audioSrc" : "https://raw.githubusercontent.com/acm-hackschool-f17/BruinPlayResources/master/audio/nkansal-mix/heaven.mp3",
+	"audioImageSrc" : "https://raw.githubusercontent.com/acm-hackschool-f17/BruinPlayResources/master/cover_art/nkansal-mix/heaven.jpg",
+	"title" : "Heaven",
+	"artistName" : "Nikhil Kansal",
+	"albumName" : null,
+	"albumCoverSrc" : null
+},
+{
+	"audioSrc" : "https://raw.githubusercontent.com/acm-hackschool-f17/BruinPlayResources/master/audio/nkansal-mix/hell.mp3",
+	"audioImageSrc" : "https://raw.githubusercontent.com/acm-hackschool-f17/BruinPlayResources/master/cover_art/nkansal-mix/hell.jpg",
+	"title" : "Hell",
+	"artistName" : "Nikhil Kansal",
+	"albumName" : null,
+	"albumCoverSrc" : null
+},
+{
+	"audioSrc" : "https://raw.githubusercontent.com/acm-hackschool-f17/BruinPlayResources/master/audio/nkansal-mix/sky.mp3",
+	"audioImageSrc" : "https://raw.githubusercontent.com/acm-hackschool-f17/BruinPlayResources/master/cover_art/nkansal-mix/sky.jpg",
+	"title" : "Sky",
+	"artistName" : "Nikhil Kansal",
+	"albumName" : null,
+	"albumCoverSrc" : null
+},
+{
+	"audioSrc" : "https://raw.githubusercontent.com/acm-hackschool-f17/BruinPlayResources/master/audio/nkansal-mix/space.mp3",
+	"audioImageSrc" : "https://raw.githubusercontent.com/acm-hackschool-f17/BruinPlayResources/master/cover_art/nkansal-mix/space.jpg",
+	"title" : "Space",
+	"artistName" : "Nikhil Kansal",
+	"albumName" : null,
+	"albumCoverSrc" : null
+},
+{
+	"audioSrc" : "https://raw.githubusercontent.com/acm-hackschool-f17/BruinPlayResources/master/audio/nkansal-mix/total_nonsense.mp3",
+	"audioImageSrc" : "https://raw.githubusercontent.com/acm-hackschool-f17/BruinPlayResources/master/cover_art/nkansal-mix/total_nonsense.jpg",
+	"title" : "Total Nonsense",
+	"artistName" : "Nikhil Kansal",
+	"albumName" : null,
+	"albumCoverSrc" : null
+},
+{
+	"audioSrc" : "https://raw.githubusercontent.com/acm-hackschool-f17/BruinPlayResources/master/audio/nkansal-mix/transcend.mp3",
+	"audioImageSrc" : "https://raw.githubusercontent.com/acm-hackschool-f17/BruinPlayResources/master/cover_art/nkansal-mix/transcend.jpg",
+	"title" : "Transcend",
+	"artistName" : "Nikhil Kansal",
+	"albumName" : null,
+	"albumCoverSrc" : null
+},
+{
+	"audioSrc" : "https://raw.githubusercontent.com/acm-hackschool-f17/BruinPlayResources/master/audio/nkansal-mix/urbana.mp3",
+	"audioImageSrc" : "https://raw.githubusercontent.com/acm-hackschool-f17/BruinPlayResources/master/cover_art/nkansal-mix/urbana.jpg",
+	"title" : "Urbana",
+	"artistName" : "Nikhil Kansal",
+	"albumName" : null,
+	"albumCoverSrc" : null
+}]
