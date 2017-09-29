@@ -1,0 +1,21 @@
+#audio-player-container {
+	position: fixed;
+	bottom: 0;
+}
+
+.track-card {
+	background-color: #f2f2f2;
+	padding: 5px;
+}
+
+.track-info {
+	font-family: Arial;
+}
+
+.track-info p {
+	margin: 5px 5px;
+}
+
+.track-info a {
+	text-decoration: none;
+}

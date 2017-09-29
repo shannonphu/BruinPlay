@@ -6,6 +6,13 @@ var app = express();
 var fs = require('fs');
 var path = require('path');
 
+// Expose all files in public/ to be accessible from the root of our website
+app.use(express.static('public'));
+
+var Handlebars = require('hbs');
+Handlebars.registerHelper('json', function(context) {
+	return JSON.stringify(context).replace(/"/g, '&quot;');
+});
 app.set('view engine', 'hbs');
 
 // Server listens to port 3000
@@ -15,22 +22,20 @@ app.listen(3000, function () {
 
 // Root web app endpoint
 app.get('/', function (request, response) {
-	var musicResources = readResources();
-	response.render('home', {
-		songs: musicResources
+	readResources(function(musicResources) {
+		response.render('home', {
+			songs: musicResources
+		});
 	});
 });
 
 
 // Helper methods for reading resource file
-// TODO: async reading causing undefined to be returned before fs.readFile
-//       fix with callback?
-var readResources = function() {
+var readResources = function(callback) {
 	fs.readFile(path.join(__dirname, 'resources.json'), {encoding: 'utf-8'}, function(err,data){
 	    if (!err) {
 	        var musicResources = JSON.parse(data);
-	        console.log(musicResources);
-	        return musicResources;
+	        callback(musicResources);
 	    } else {
 	        console.log(err);
 	    }

@@ -1,11 +1,52 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>{{title}}</title>
+	<title>Bruin Play</title>
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta/css/bootstrap-grid.min.css">
+	<link rel="stylesheet" type="text/css" href="/style.css">
 </head>
 <body>
-	{{#each songs}}
-	{{this}}
+	<div class="container tracks-container">
+	{{#each songs as |track index|}}
+		<div class="row">
+			<div class="col track-card" onclick="changePlayingTrack({{{json track}}})">
+				<div class="track-image">
+					{{#if track.albumCoverSrc}}
+						<img src="{{track.albumCoverSrc}}">
+					{{else}} 
+						{{#if track.audioImageSrc}}
+						<img src="{{track.audioImageSrc}}">
+						{{else}}
+						<img src="http://www.scottishculture.org/themes/scottishculture/images/music_placeholder.png">
+						{{/if}}
+					{{/if}}
+				</div>
+				
+				<div class="track-info">
+					<p>{{track.title}}</p>
+					<a href="#"><p>{{track.artistName}}</p></a>
+				</div>
+			</div>
+		</div>
 	{{/each}}
+	</div>
+
+	<div id="audio-player-container">
+		<audio id="audio-player-controller" controls>
+		  <source id="audio-player-src" type="audio/mpeg">
+		</audio>
+	</div>
+
+	<script type="text/javascript">
+		var changePlayingTrack = function(track) {
+			console.log(track.audioSrc);
+			var currentTrack = document.getElementById("audio-player-src");
+			currentTrack.src = track.audioSrc;
+
+			var audioController = document.getElementById("audio-player-controller");
+			audioController.load();
+			audioController.play();
+		}
+	</script>
 </body>
 </html>
