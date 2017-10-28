@@ -13,6 +13,7 @@ var Handlebars = require('hbs');
 Handlebars.registerHelper('json', function(context) {
 	return JSON.stringify(context).replace(/"/g, '&quot;');
 });
+
 app.set('view engine', 'hbs');
 
 // Server listens to port 3000
