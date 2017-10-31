@@ -7,7 +7,7 @@
 </head>
 <body>
 	<nav class="navbar navbar-expand-md fixed-top navbar-dark bg-dark">
-	  <a class="navbar-brand" href="#">Navbar</a>
+	  <a class="navbar-brand" href="#">BruinPlay</a>
 	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
 	    <span class="navbar-toggler-icon"></span>
 	  </button>
@@ -17,22 +17,50 @@
 	        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
 	      </li>
 	      <li class="nav-item">
-	        <a class="nav-link" href="#">Features</a>
-	      </li>
-	      <li class="nav-item">
-	        <a class="nav-link" href="#">Pricing</a>
-	      </li>
-	      <li class="nav-item">
-	        <a class="nav-link disabled" href="#">Disabled</a>
+	        <a class="nav-link" href="#"  data-toggle="modal" data-target="#exampleModal">Add to Library</a>
 	      </li>
 	    </ul>
 	  </div>
 	</nav>
 
+	<!-- Modal -->
+	<form>
+		<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		  <div class="modal-dialog" role="document">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <h5 class="modal-title" id="exampleModalLabel">Add a new song</h5>
+		        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+		          <span aria-hidden="true">&times;</span>
+		        </button>
+		      </div>
+		      <div class="modal-body">
+		      	  <div class="form-group">
+		      	    <label for="songTitle">Song Title</label>
+		      	    <input class="form-control" id="songTitle" placeholder="Enter the name of your song">
+		      	  </div>
+		      	  <div class="form-group">
+		      	    <label for="songArtist">Artist</label>
+		      	    <input class="form-control" id="songArtist" placeholder="Enter the artist of your song">
+		      	  </div>
+		      	  <div class="form-group">
+		      	    <label for="songFilePath">Upload Your File</label>
+		      	    <input type="file" class="form-control" id="songFilePath" placeholder="song.mp3">
+		      	  </div>
+		      </div>
+		      <div class="modal-footer">
+		        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+		        <button type="button" class="btn btn-primary">Save changes</button>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+	</form>
+
 	<div class="container tracks-container">
 		<div class="row">
 		{{#each songs as |track index|}}
-				<div class="col-12 col-md-6 col-lg-3 card" style="width: 20rem;" onclick="changePlayingTrack({{{json track}}})">
+				<div class="col-12 col-md-6 col-lg-4 card" style="width: 20rem;" onclick="changePlayingTrack({{{json track}}})">
 				  
 				  {{#if track.albumCoverSrc}}
 				  	<img class="card-img-top" src="{{track.albumCoverSrc}}">
@@ -47,7 +75,7 @@
 				  <div class="card-body">
 				    <h4 class="card-title">{{track.title}}</h4>
 				    <p class="card-text"><a href="#">{{track.artistName}}</a></p>
-				    <a href="#" class="btn btn-primary">Go somewhere</a>
+				    <a href="#" class="card-play-btn btn btn-primary" onclick="changePlayingTrack({{{json track}}})">Play</a>
 				  </div>
 				</div>
 		{{/each}}
@@ -59,9 +87,11 @@
 		  <source id="audio-player-src" type="audio/mpeg">
 		</audio>
 	</div>
+
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+
 	<script type="text/javascript">
 		var changePlayingTrack = function(track) {
 			console.log(track.audioSrc);

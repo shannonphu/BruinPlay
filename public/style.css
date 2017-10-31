@@ -3,6 +3,10 @@
 	bottom: 0;
 }
 
+#audio-player-controller {
+	width: 100vw;
+}
+
 .track-card {
 	background-color: #f2f2f2;
 	padding: 5px;
@@ -18,4 +22,12 @@
 
 .track-info a {
 	text-decoration: none;
+}
+
+.card-text {
+	display: inline-block;
+}
+
+.card-play-btn {
+	float: right;
 }
