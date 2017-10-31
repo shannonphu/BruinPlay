@@ -97,12 +97,31 @@
 			var paperAudioPlayer = document.getElementById("audio-player-src");
 			paperAudioPlayer.src = track.audioSrc;
 			paperAudioPlayer.title = track.title + ' - ' + track.artistName;
-			// Generate and assign a random color for the player
-			paperAudioPlayer.color = "#"+((1<<24)*Math.random()|0).toString(16);
+			paperAudioPlayer.color = getRandomPlayerColor();
 
 			var audioController = paperAudioPlayer.getElementsByTagName("audio")[0];
 			audioController.load();
 			audioController.play();
+		}
+
+		// Returns a random contrasting color to white
+		var getRandomPlayerColor = function() {
+			do {
+				var color = "#"+((1<<24)*Math.random()|0).toString(16);
+				var luminance = getLuminance(color);
+			} while (255 / luminance < 4.5);
+
+			return color;
+		}
+
+		var getLuminance = function(color) {
+			color = color.replace('#', '');
+
+			var red = parseInt(color.substring(0, 2), 16);
+			var green = parseInt(color.substring(2, 4), 16);
+			var blue = parseInt(color.substring(4, 6), 16);
+
+			return 0.2126 * red + 0.7152 * green + 0.0722 * blue;
 		}
 	</script>
 </body>
