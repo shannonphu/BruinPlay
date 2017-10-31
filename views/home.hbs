@@ -25,7 +25,7 @@
 	</nav>
 
 	<!-- Modal -->
-	<form>
+	<form action="/" method="POST" enctype="multipart/form-data">
 		<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 		  <div class="modal-dialog" role="document">
 		    <div class="modal-content">
@@ -38,20 +38,24 @@
 		      <div class="modal-body">
 		      	  <div class="form-group">
 		      	    <label for="songTitle">Song Title</label>
-		      	    <input class="form-control" id="songTitle" placeholder="Enter the name of your song">
+		      	    <input name="title" class="form-control" id="songTitle" placeholder="Enter the name of your song">
 		      	  </div>
 		      	  <div class="form-group">
 		      	    <label for="songArtist">Artist</label>
-		      	    <input class="form-control" id="songArtist" placeholder="Enter the artist of your song">
+		      	    <input name="artistName" class="form-control" id="songArtist" placeholder="Enter the artist of your song">
 		      	  </div>
 		      	  <div class="form-group">
 		      	    <label for="songFilePath">Upload Your File</label>
-		      	    <input type="file" class="form-control" id="songFilePath" placeholder="song.mp3">
+		      	    <input name="audioSrc" type="file" class="form-control" id="songFilePath" placeholder="song.mp3">
+		      	  </div>
+							<div class="form-group">
+		      	    <label for="imageFilePath">Upload Optional Cover</label>
+		      	    <input name="audioImageSrc" type="file" class="form-control" id="imageFilePath" placeholder="image.jpg">
 		      	  </div>
 		      </div>
 		      <div class="modal-footer">
 		        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-		        <button type="button" class="btn btn-primary">Save changes</button>
+		        <button type="submit" class="btn btn-primary">Save changes</button>
 		      </div>
 		    </div>
 		  </div>
