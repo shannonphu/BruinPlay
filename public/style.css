@@ -1,10 +1,7 @@
-#audio-player-container {
+#audio-player-src {
 	position: fixed;
 	bottom: 0;
-}
-
-#audio-player-controller {
-	width: 100vw;
+	width: 100%;
 }
 
 .track-card {
