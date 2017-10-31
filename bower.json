@@ -1,0 +1,17 @@
+{
+  "name": "bruinplay",
+  "description": "SoundCloud clone to play and view music",
+  "main": "server.js",
+  "authors": [
+    "ACM Hack"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/shannonphu/BruinPlay",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
