@@ -96,6 +96,7 @@
 
 			var paperAudioPlayer = document.getElementById("audio-player-src");
 			paperAudioPlayer.src = track.audioSrc;
+			paperAudioPlayer.title = track.title + ' - ' + track.artistName;
 
 			var audioController = paperAudioPlayer.getElementsByTagName("audio")[0];
 			audioController.load();
