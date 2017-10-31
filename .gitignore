@@ -17,3 +17,7 @@ node_modules/
 
 # Optional npm cache directory
 .npm
+
+# Temp assets
+public/uploads/*
+!public/uploads/.gitkeep
