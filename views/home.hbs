@@ -97,6 +97,8 @@
 			var paperAudioPlayer = document.getElementById("audio-player-src");
 			paperAudioPlayer.src = track.audioSrc;
 			paperAudioPlayer.title = track.title + ' - ' + track.artistName;
+			// Generate and assign a random color for the player
+			paperAudioPlayer.color = "#"+((1<<24)*Math.random()|0).toString(16);
 
 			var audioController = paperAudioPlayer.getElementsByTagName("audio")[0];
 			audioController.load();
