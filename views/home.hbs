@@ -4,6 +4,7 @@
 	<title>Bruin Play</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" href="/style.css">
+	<link rel="import" href="bower_components/paper-audio-player/paper-audio-player.html">
 </head>
 <body>
 	<nav class="navbar navbar-expand-md fixed-top navbar-dark bg-dark">
@@ -82,25 +83,45 @@
 		</div>
 	</div>
 
-	<div id="audio-player-container">
-		<audio id="audio-player-controller" controls>
-		  <source id="audio-player-src" type="audio/mpeg">
-		</audio>
-	</div>
+	<paper-audio-player id="audio-player-src" title=""></paper-audio-player>
 
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+	<script src="bower_components/webcomponentsjs/webcomponents.js"></script>
 
 	<script type="text/javascript">
 		var changePlayingTrack = function(track) {
 			console.log(track.audioSrc);
-			var currentTrack = document.getElementById("audio-player-src");
-			currentTrack.src = track.audioSrc;
 
-			var audioController = document.getElementById("audio-player-controller");
+			var paperAudioPlayer = document.getElementById("audio-player-src");
+			paperAudioPlayer.src = track.audioSrc;
+			paperAudioPlayer.title = track.title + ' - ' + track.artistName;
+			paperAudioPlayer.color = getRandomPlayerColor();
+
+			var audioController = paperAudioPlayer.getElementsByTagName("audio")[0];
 			audioController.load();
 			audioController.play();
+		}
+
+		// Returns a random contrasting color to white
+		var getRandomPlayerColor = function() {
+			do {
+				var color = "#"+((1<<24)*Math.random()|0).toString(16);
+				var luminance = getLuminance(color);
+			} while (255 / luminance < 4.5);
+
+			return color;
+		}
+
+		var getLuminance = function(color) {
+			color = color.replace('#', '');
+
+			var red = parseInt(color.substring(0, 2), 16);
+			var green = parseInt(color.substring(2, 4), 16);
+			var blue = parseInt(color.substring(4, 6), 16);
+
+			return 0.2126 * red + 0.7152 * green + 0.0722 * blue;
 		}
 	</script>
 </body>
