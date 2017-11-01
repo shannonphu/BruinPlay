@@ -67,4 +67,5 @@ body {
 
 .card-delete-btn {
 	float: right;
+	margin-top: 0.6rem;
 }
