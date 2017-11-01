@@ -1,7 +1,27 @@
+body {
+	background: #f7f7f7;
+}
+
+.tracks-container {
+	margin-top: 100px;
+	margin-bottom: 100px;
+}
+
 #audio-player-src {
 	position: fixed;
 	bottom: 0;
 	width: 100%;
+}
+
+.card-wrapper {
+	border: none;
+	background: none;
+	padding: 5px;
+}
+
+.card {
+	background: #ffffff;
+	height: 250px;
 }
 
 .track-card {
@@ -9,20 +29,40 @@
 	padding: 5px;
 }
 
-.track-info {
-	font-family: Arial;
+.track-hover {
+	opacity: 0;
+	position: absolute;
+	background: rgba(0,0,0,0.6);
+	width: 100%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	-webkit-transition: opacity 0.2s ease;
+	transition: opacity 0.2s ease;
 }
 
-.track-info p {
-	margin: 5px 5px;
+.card-top {
+	position: relative;
+	cursor: pointer;
 }
 
-.track-info a {
-	text-decoration: none;
+.card-top:hover .track-hover{
+	opacity: 1;
+}
+
+.card-body {
+	padding: 0.6rem;
 }
 
 .card-text {
-	display: inline-block;
+	width: 100%;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	margin: 0;
+	font-size: 0.8rem;
 }
 
 .card-play-btn {

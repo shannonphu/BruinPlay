@@ -5,6 +5,7 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" href="/style.css">
 	<link rel="import" href="bower_components/paper-audio-player/paper-audio-player.html">
+	<script src="https://use.fontawesome.com/eb20c96418.js"></script>
 </head>
 <body>
 	<nav class="navbar navbar-expand-md fixed-top navbar-dark bg-dark">
@@ -65,23 +66,27 @@
 	<div class="container tracks-container">
 		<div class="row">
 		{{#each songs as |track index|}}
-				<div class="col-12 col-md-6 col-lg-4 card" style="width: 20rem;" onclick="changePlayingTrack({{{json track}}})">
-				  
-				  {{#if track.albumCoverSrc}}
-				  	<img class="card-img-top" src="{{track.albumCoverSrc}}">
-				  {{else}} 
-				  	{{#if track.audioImageSrc}}
-				  	<img class="card-img-top" src="{{track.audioImageSrc}}">
-				  	{{else}}
-				  	<img class="card-img-top" src="http://www.scottishculture.org/themes/scottishculture/images/music_placeholder.png">
-				  	{{/if}}
-				  {{/if}}
-
-				  <div class="card-body">
-				    <h4 class="card-title">{{track.title}}</h4>
-				    <p class="card-text"><a href="#">{{track.artistName}}</a></p>
-				    <a href="#" class="card-play-btn btn btn-primary" onclick="changePlayingTrack({{{json track}}})">Play</a>
-				  </div>
+				<div class="col-4 col-md-3 col-lg-2 card-wrapper" style="width: 20rem;" onclick="changePlayingTrack({{{json track}}})">
+					<div class="card">
+					 <div class="card-top">
+						  <div class="track-hover">
+						  	<a href="#" class="card-play-btn" onclick="changePlayingTrack({{{json track}}})"><i class="fa fa-play" aria-hidden="true"></i></a>
+						  </div>
+						  {{#if track.albumCoverSrc}}
+						  	<img class="card-img-top" src="{{track.albumCoverSrc}}">
+						  {{else}} 
+						  	{{#if track.audioImageSrc}}
+						  	<img class="card-img-top" src="{{track.audioImageSrc}}">
+						  	{{else}}
+						  	<img class="card-img-top" src="http://www.scottishculture.org/themes/scottishculture/images/music_placeholder.png">
+						  	{{/if}}
+						  {{/if}}
+						</div>
+					  <div class="card-body">
+					    <h6 class="card-title card-text">{{track.title}}</h6>
+					    <p class="card-text"><a href="#">{{track.artistName}}</a></p>
+					  </div>
+					 </div>
 				</div>
 		{{/each}}
 		</div>
