@@ -68,4 +68,12 @@ body {
 .card-delete-btn {
 	float: right;
 	margin-top: 0.6rem;
+	border-color: none;
+	height: 25px;
+	width: 25px;
+	background-image: url("trash-can.png");
+	background-position: 2px 2px;
+	background-repeat: no-repeat;
+	background-color: white;
+	cursor: pointer;
 }
