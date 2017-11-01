@@ -48,10 +48,10 @@ app.get('/', function (request, response) {
 var fileUpload = upload.fields([{ name: 'audioSrc', maxCount: 1 }, { name: 'audioImageSrc', maxCount: 1 }]);
 app.post('/', fileUpload, function(request, response) {
     if (request.files['audioSrc']) {
-        request.body.audioSrc = request.files['audioSrc'][0].path;
+        request.body.audioSrc = request.files['audioSrc'][0].path.replace('uploads/', '');
     }
     if (request.files['audioImageSrc']) {
-        request.body.audioImageSrc = request.files['audioImageSrc'][0].path;
+        request.body.audioImageSrc = request.files['audioImageSrc'][0].path.replace('uploads/', '');
     }
     request.body.albumName = null;
     request.body.albumCoverSrc = null;
