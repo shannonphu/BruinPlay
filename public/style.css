@@ -21,7 +21,7 @@ body {
 
 .card {
 	background: #ffffff;
-	height: 250px;
+	min-height: 250px;
 }
 
 .track-card {
@@ -65,6 +65,6 @@ body {
 	font-size: 0.8rem;
 }
 
-.card-play-btn {
+.card-delete-btn {
 	float: right;
 }
