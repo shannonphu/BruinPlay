@@ -19,5 +19,5 @@ node_modules/
 .npm
 
 # Temp assets
-public/uploads/*
-!public/uploads/.gitkeep
+uploads/*
+!uploads/.gitkeep
