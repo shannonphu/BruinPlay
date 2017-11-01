@@ -46,7 +46,7 @@ app.get('/', function (request, response) {
 
 // Music submission endpoint
 var fileUpload = upload.fields([{ name: 'audioSrc', maxCount: 1 }, { name: 'audioImageSrc', maxCount: 1 }]);
-app.post('/', fileUpload, function(request, response) {
+app.post('/addsong', fileUpload, function(request, response) {
     if (request.files['audioSrc']) {
         request.body.audioSrc = request.files['audioSrc'][0].path.replace('uploads/', '');
     }
@@ -57,6 +57,21 @@ app.post('/', fileUpload, function(request, response) {
     request.body.albumCoverSrc = null;
 
     musicResources.push(request.body);
+    response.render('home', {
+        songs: musicResources
+    });
+});
+
+// Music deletion endpoint
+app.post('/deletesong', function(request, response) {
+    var index = musicResources.findIndex(function(track) {
+        return JSON.stringify(track) === request.body.track;
+    });
+
+    if (index > -1) {
+        musicResources.splice(index, 1);
+    }
+
     response.render('home', {
         songs: musicResources
     });
