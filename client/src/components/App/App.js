@@ -2,6 +2,7 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 import Button from '@material-ui/core/Button';
+import Card from '../Card/Card';
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
         <Button variant="contained" color="primary">
           Hello World
         </Button>
+        <Card />
         <p>
           Edit <code>src/App.js</code> and save to reload. Rucha is poopoo
         </p>
