@@ -25,3 +25,5 @@ client/.pnp.js
 # Temp assets
 uploads/*
 !uploads/.gitkeep
+
+.DS_Store

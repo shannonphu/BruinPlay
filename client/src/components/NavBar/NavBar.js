@@ -2,6 +2,7 @@ import React from 'react';
 import {AppBar, Button, Toolbar, IconButton, Typography} from '@material-ui/core';
 import {withStyles} from '@material-ui/core/styles';
 import MenuIcon from '@material-ui/icons/Menu';
+import AddToLibrary from './AddToLibrary';
 
 const styles = theme => ({
   menuButton: {
@@ -20,7 +21,7 @@ function NavBar({ classes }) {
           BruinPlay
         </Typography>
         <Button color="inherit">Home</Button>
-        <Button color="inherit">Add to Library</Button>
+        <AddToLibrary/>
       </Toolbar>
     </AppBar>
   );
