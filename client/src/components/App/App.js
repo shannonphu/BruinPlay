@@ -3,11 +3,13 @@ import logo from './logo.svg';
 import './App.css';
 import Button from '@material-ui/core/Button';
 import Card from '../Card/Card';
+import NavBar from '../NavBar/NavBar';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
+    <div>
+      <header>
+        <NavBar/>
         <img src={logo} className="App-logo" alt="logo" />
         <Button variant="contained" color="primary">
           Hello World
