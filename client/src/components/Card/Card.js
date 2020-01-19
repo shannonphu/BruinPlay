@@ -17,17 +17,18 @@ const styles = {
     },
     overlayContainer: {
         position: 'relative',
-        '& :hover': {
-            filter: 'brightness(50%)'
-        }
     },
     overlay: {
         position: 'absolute',
-        top: '50%',
-        left: '50%',
-        transform: 'translate(-50%, -50%)',
-        transition: 'opacity 0.25s',
+        backgroundColor: 'rgba(0, 0, 0, 0.5)',
+        width: '100%',
+        height: '100%',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        transition: 'opacity 0.35s',
         color: '#007bff',
+        cursor: 'pointer',
     },
     overlayHidden: {
         opacity: 0,
@@ -63,11 +64,11 @@ class Card extends Component {
             <MUICard className={classes.card}>
                 <div className={classes.overlayContainer} onMouseEnter={this.toggleHover} onMouseLeave={this.toggleHover}>
                     <div className={overlayClassName}>▶</div>
-                    <CardMedia className={classes.thumbnail} image="https://scontent-lax3-1.xx.fbcdn.net/v/t31.0-8/29744876_2440318372661037_5050247441176524648_o.png?_nc_cat=1&_nc_ohc=ml2RGlGbqacAX9AfQAK&_nc_ht=scontent-lax3-1.xx&oh=117474cbfebdd7327e279ea9fc1e29fc&oe=5E976E39"/>
+                    <CardMedia className={classes.thumbnail} image={this.props.audioImageSrc}/>
                 </div>
                 <CardContent>
-                    <Typography variant="body2" align="left"><b>Versace on the Floor</b></Typography>
-                    <Typography variant="body2" align="left">Bruno Mars</Typography>
+                    <Typography variant="body2" align="left"><b>{this.props.title}</b></Typography>
+                    <Typography variant="body2" align="left">{this.props.artistName}</Typography>
                 </CardContent>
                 <div align="right" style={{padding: 20}}>
                     <DeleteButton/>

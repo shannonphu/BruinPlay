@@ -12,7 +12,7 @@ function App() {
         <Button variant="contained" color="primary">
           Hello World
         </Button>
-        <Card />
+        <Card title="24K Magic" artistName="Bruno Mars" audioImageSrc="https://raw.githubusercontent.com/acm-hackschool-f17/BruinPlayResources/master/cover_art/bruno-mars-24k-magic/bruno-mars-24k-magic.jpg"/>
         <p>
           Edit <code>src/App.js</code> and save to reload. Rucha is poopoo
         </p>

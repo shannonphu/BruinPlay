@@ -10,7 +10,8 @@ const styles = {
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
         backgroundSize: 'cover',
-        border: 'none'
+        border: 'none',
+        cursor: 'pointer',
     }
 }
 
