@@ -33,8 +33,8 @@ Handlebars.registerHelper('json', function(context) {
 app.set('view engine', 'hbs');
 
 // Server listens to port 3000
-app.listen(3000, function () {
-    console.log('Your app is listening on port 3000!');
+app.listen(8080, function () {
+    console.log('Your app is listening on port 8080!');
 });
 
 // Root web app endpoint

@@ -2,6 +2,7 @@
 logs
 *.log
 npm-debug.log*
+package-lock.json
 
 # Runtime data
 pids
@@ -14,6 +15,9 @@ build/Release
 
 # Dependency directories
 node_modules/
+client/node_modules/
+client/.pnp
+client/.pnp.js
 
 # Optional npm cache directory
 .npm
@@ -21,3 +25,5 @@ node_modules/
 # Temp assets
 uploads/*
 !uploads/.gitkeep
+
+.DS_Store
